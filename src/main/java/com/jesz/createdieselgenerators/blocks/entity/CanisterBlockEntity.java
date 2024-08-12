@@ -19,6 +19,7 @@ import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import org.jetbrains.annotations.Nullable;
 
+import javax.annotation.Nullable;
 import java.util.List;
 
 public class CanisterBlockEntity extends SmartBlockEntity implements IHaveGoggleInformation, SidedStorageBlockEntity {
@@ -43,6 +44,12 @@ public class CanisterBlockEntity extends SmartBlockEntity implements IHaveGoggle
 
     @Nullable
     @Override
+    public Storage<FluidVariant> getFluidStorage(@Nullable Direction side) {
+        return tank.getCapability();
+    }
+
+    @Override
+    @Nullable
     public Storage<FluidVariant> getFluidStorage(@Nullable Direction side) {
         return tank.getCapability();
     }
