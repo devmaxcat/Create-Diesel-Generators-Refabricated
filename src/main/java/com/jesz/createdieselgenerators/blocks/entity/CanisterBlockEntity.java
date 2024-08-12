@@ -48,12 +48,6 @@ public class CanisterBlockEntity extends SmartBlockEntity implements IHaveGoggle
     }
 
     @Override
-    @Nullable
-    public Storage<FluidVariant> getFluidStorage(@Nullable Direction side) {
-        return tank.getCapability();
-    }
-
-    @Override
     public void addBehaviours(List<BlockEntityBehaviour> behaviours) {
         tank = CapacityEnchantedFluidTankBehaviour.single(this, Math.abs((ConfigRegistry.CANISTER_CAPACITY.get())), ConfigRegistry.CANISTER_CAPACITY_ENCHANTMENT.get());
         behaviours.add(tank);
