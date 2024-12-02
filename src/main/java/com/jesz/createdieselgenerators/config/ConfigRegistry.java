@@ -30,6 +30,7 @@ public class ConfigRegistry {
     public static final ForgeConfigSpec.ConfigValue<Boolean> OIL_DEPOSITS_INFINITE;
 
     public static final ForgeConfigSpec.ConfigValue<Double> OIL_MULTIPLIER;
+    public static final ForgeConfigSpec.ConfigValue<Double> OIL_COLLECTION_MULTIPLIER;
     public static final ForgeConfigSpec.ConfigValue<Double> HIGH_OIL_MULTIPLIER;
 
     public static final ForgeConfigSpec.ConfigValue<Double> OIL_PERCENTAGE;
@@ -79,19 +80,21 @@ public class ConfigRegistry {
         SERVER_BUILDER.pop();
 
         SERVER_BUILDER.push("Oil Config");
-            OIL_DEPOSITS_INFINITE = SERVER_BUILDER.comment("Whenever crude oil deposits are infinite")
-                    .define("Infinite oil deposits", false);
-            OIL_MULTIPLIER = SERVER_BUILDER.comment("Normal oil chunks oil amount multiplier")
-                    .define("Normal oil chunks oil amount multiplier", 1d);
-            HIGH_OIL_MULTIPLIER = SERVER_BUILDER.comment("High oil chunks oil amount multiplier")
-                    .define("High oil chunks oil amount multiplier", 1d);
-            MAX_OIL_SCANNER_LEVEL = SERVER_BUILDER.comment("Max Oil Scanner Level")
-                .define("Max Oil Scanner Level", 10000);
-            OIL_PERCENTAGE = SERVER_BUILDER.comment("Normal oil chunks percentage")
-                    .defineInRange("Normal oil chunks percentage", 10d, 0d, 100d);
-            HIGH_OIL_PERCENTAGE = SERVER_BUILDER.comment("High oil chunks percentage")
-                    .defineInRange("High oil chunks percentage", 10d, 0d, 100d);
-            SERVER_BUILDER.push("Distillation");
+                OIL_DEPOSITS_INFINITE = SERVER_BUILDER.comment("Whenever crude oil deposits are infinite")
+                        .define("Infinite oil deposits", false);
+                OIL_MULTIPLIER = SERVER_BUILDER.comment("Normal oil chunks oil amount multiplier")
+                        .define("Normal oil chunks oil amount multiplier", 1d);
+                OIL_COLLECTION_MULTIPLIER = SERVER_BUILDER.comment("Multiplies how much oil is extracted per tick (up to a maximum of 1 bucket per tick)")
+                        .define("Oil collection multiplier", 1d);
+                HIGH_OIL_MULTIPLIER = SERVER_BUILDER.comment("High oil chunks oil amount multiplier")
+                        .define("High oil chunks oil amount multiplier", 1d);
+                MAX_OIL_SCANNER_LEVEL = SERVER_BUILDER.comment("Max Oil Scanner Level")
+                        .define("Max Oil Scanner Level", 10000);
+                OIL_PERCENTAGE = SERVER_BUILDER.comment("Normal oil chunks percentage")
+                        .defineInRange("Normal oil chunks percentage", 10d, 0d, 100d);
+                HIGH_OIL_PERCENTAGE = SERVER_BUILDER.comment("High oil chunks percentage")
+                        .defineInRange("High oil chunks percentage", 10d, 0d, 100d);
+        SERVER_BUILDER.push("Distillation");
                 DISTILLATION_WIDE_TANK_FASTER = SERVER_BUILDER.comment("Whenever wide Distillation Towers go faster than the thin ones")
                         .define("Wide Distillation Tower Distill Faster", true);
                 DISTILLATION_LEVEL_HEIGHT = SERVER_BUILDER.comment("Height of Distillation Tower level")

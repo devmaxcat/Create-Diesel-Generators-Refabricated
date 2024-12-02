@@ -4,6 +4,7 @@ import com.jesz.createdieselgenerators.CreateDieselGenerators;
 import com.jesz.createdieselgenerators.TagRegistry;
 import com.jesz.createdieselgenerators.fluids.FluidRegistry;
 import com.jesz.createdieselgenerators.world.OilChunksSavedData;
+import com.jesz.createdieselgenerators.config.ConfigRegistry;
 import com.simibubi.create.content.equipment.goggles.IHaveGoggleInformation;
 import com.simibubi.create.content.equipment.goggles.IHaveHoveringInformation;
 import com.simibubi.create.content.fluids.hosePulley.HosePulleyBlockEntity;
@@ -181,9 +182,9 @@ public class PumpjackHoleBlockEntity extends SmartBlockEntity implements IHaveGo
             if(storedOilAmount == 0){
                 sd.setChunkAmount(chunkPos, amount-1);
                 oilAmount = amount -1;
-                storedOilAmount = 81000;
+                storedOilAmount = 81000; 
             }
-            int subtractedAmount = Mth.clamp((int) (8100 * Math.abs((float) headPos / (float) bearingPos)) * (isCrankLarge ? 2 : 1), 0, 81000);
+            int subtractedAmount = Mth.clamp((int) (8100 * ConfigRegistry.OIL_COLLECTION_MULTIPLIER.get() * Math.abs((float) headPos / (float) bearingPos)) * (isCrankLarge ? 2 : 1), 0, 81000);
             storedOilAmount = storedOilAmount < subtractedAmount ? 0 : storedOilAmount - subtractedAmount;
 
             TagKey<Fluid> fluidTag = TagRegistry.FluidTags.PUMPJACK_OUTPUT.tag;
