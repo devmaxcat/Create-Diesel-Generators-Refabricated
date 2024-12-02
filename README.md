@@ -16,3 +16,10 @@ Adding Diesel Generators ( and more stuff ) to the <a href="https://www.cursefor
 <img src="https://cdn.discordapp.com/emojis/1121801687502434525.png?size=48&quality=lossless">
 <img src="https://cdn.discordapp.com/emojis/1121802680143204452.png?size=48&quality=lossless">
 </p>
+
+A fabric port of Create: Diesel Engines by [george8188625](https://github.com/george8188625)
+Port was originally created by [mrsterner](https://github.com/mrsterner)
+This is my version / rework of that port with fixes and support for pull requests. If you want to contribute feel free to make a pull request, it would be appreciated!
+
+If you don't know how to do that, for bugs or feature requests, add an issue.
+
