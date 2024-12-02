@@ -18,7 +18,7 @@ Adding Diesel Generators ( and more stuff ) to the <a href="https://www.cursefor
 </p>
 
 A fabric port of Create: Diesel Engines by [george8188625](https://github.com/george8188625)
-Port was originally created by [mrsterner](https://github.com/mrsterner)
+Port was originally created by [mrsterner](https://github.com/mrsterner). Fluid fixes by [Bugord](https://github.com/devmaxcat)
 This is my version / rework of that port with fixes and support for pull requests. If you want to contribute feel free to make a pull request, it would be appreciated!
 
 If you don't know how to do that, for bugs or feature requests, add an issue.
